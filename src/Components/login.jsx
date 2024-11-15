@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "./UserContext";
 import Navbar from "./Navbar";
+import Footer from "./header and footer/Footer";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -87,11 +88,14 @@ function Login() {
           {error && <span className="error-msg">{error}</span>}
           <br />
           <span>
-            Don't have an account? Register
-            <Link to="/register"> Here</Link>
+            Don't have an account?
+            <span>
+              <Link to="/register">Register Here</Link>
+            </span>
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

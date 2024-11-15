@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
- import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Footer from "./header and footer/Footer";
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -109,6 +109,7 @@ return (
         </div>
       ))}
      </div>
+     <Footer />
     </div>
   );
 }

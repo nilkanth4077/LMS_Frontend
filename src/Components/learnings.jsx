@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "./header and footer/Footer";
 
 function Learnings(){
     const userId = localStorage.getItem("id");
@@ -74,6 +75,7 @@ function Learnings(){
         </div>
       ))}
      </div>
+     <Footer />
      </>
     );
 }

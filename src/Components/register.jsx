@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./header and footer/Footer";
 
 function RegistrationForm() {
   const navigate = useNavigate();
@@ -184,11 +185,14 @@ function RegistrationForm() {
             </div>
           </form>
           <span>
-            Already have an account? login
-            <Link to="/login"> Here</Link>
+            Already have an account?
+            <span>
+              <Link to="/login">Login Here</Link>
+            </span>
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

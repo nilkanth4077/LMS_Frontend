@@ -5,7 +5,7 @@ import ImgUpload from "./ImgUpload";
 import Performance from "./DashBoard/Performance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
+import Footer from "./header and footer/Footer";
 
 function Profile() {
   const navigate = useNavigate();
@@ -130,6 +130,7 @@ function Profile() {
         </div>
       </div>
       <Performance />
+      <Footer />
     </div>
   );
 }

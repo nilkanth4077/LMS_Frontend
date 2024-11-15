@@ -43,7 +43,7 @@ function Home() {
             <a className="blue" href="#">
               Learn More
             </a>
-            <a className="yellow" href="#">
+            <a className="yellow" href="/courses">
               Visit Courses
             </a>
           </div>

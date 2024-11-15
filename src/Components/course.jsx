@@ -6,6 +6,8 @@ import ReactPlayer from "react-player";
 import { Progress } from "antd";
 import { Button, Modal } from "antd";
 import Feedback from "./Feedback";
+import Navbar from "./Navbar";
+import Footer from "./header and footer/Footer";
 
 const Course = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -129,6 +131,7 @@ const Course = () => {
   }
   return (
     <div>
+      <Navbar />
       <h3
         style={{
           textAlign: "center",
@@ -316,6 +319,7 @@ const Course = () => {
       </div>
       <button className="enroll-button" onClick={()=>navigate(`/discussion/${courseId}`)}>discussion</button>
       <Feedback courseid={courseId} />
+      <Footer/>
     </div>
   );
 };
