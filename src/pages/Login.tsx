@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,14 +37,15 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log("Login successful:", data);
-        navigate("/user_home");
+        toast.success("Login successful!");
+        setTimeout(() => navigate("/user_home"), 2000);
         localStorage.setItem("token", data.token);
       } else {
         const data = await response.json();
-        setError(data.message || "Login failed. Please try again.");
+        toast.error(data.error || "Login failed");
       }
     } catch (error) {
-      setError("An error occurred. Please try again later.");
+      toast.error("Login error. Please try again!");
     }
   };
 

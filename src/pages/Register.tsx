@@ -2,10 +2,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,13 +41,14 @@ export default function Register() {
 
       if (response.status === 200) {
         console.log("Registration successful!");
-        navigate("/login");
+        toast.success("Registration successful!");
+        setTimeout(() => navigate("/login"), 2000);
       } else {
         const data = await response.json();
-        setError(data.error);
+        toast.error(data.error || "Registration failed");
       }
     } catch (error) {
-      setError("Registration error:", error);
+      toast.error("Registration error. Please try again!");
     }
   };
 
@@ -304,7 +306,6 @@ export default function Register() {
                 </div>
               </div>
             </div>
-            {error && <span className="registration-error-msg">{error}</span>}
             <div>
               <button
                 type="submit"
