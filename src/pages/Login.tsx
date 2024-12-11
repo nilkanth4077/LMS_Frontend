@@ -38,8 +38,14 @@ export default function Login() {
         const data = await response.json();
         console.log("Login successful:", data);
         toast.success("Login successful!");
-        setTimeout(() => navigate("/user_home"), 2000);
+
+        // Store token and user in localStorage
         localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user)); // Store user details
+
+        const redirectPath =
+          data.role === "ROLE_ADMIN" ? "/admin_dashboard" : "/user_home";
+        setTimeout(() => navigate(redirectPath), 2000);
       } else {
         const data = await response.json();
         toast.error(data.error || "Login failed");
@@ -54,11 +60,6 @@ export default function Login() {
       <Navbar />
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -97,7 +98,7 @@ export default function Login() {
                 </label>
                 <div className="text-sm">
                   <a
-                    href="#"
+                    href="/login"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
