@@ -4,8 +4,11 @@ export default function Login() {
       <div class=" bg-gray-900 m-0 p-0">
         <div class="max-w-2xl mx-auto text-white py-10">
           <div class="text-center">
-            <h3 class="text-3xl mb-3"> Download our fitness app </h3>
-            <p> Stay fit. All day, every day. </p>
+            <h3 class="text-3xl mb-3">
+              {" "}
+              Learn anytime, anywhere with our LMS app{" "}
+            </h3>
+            <p> Empowering minds, one course at a time. </p>
             <div class="flex justify-center my-10">
               <div class="flex items-center border w-auto rounded-lg px-4 py-2 mx-2">
                 <img
