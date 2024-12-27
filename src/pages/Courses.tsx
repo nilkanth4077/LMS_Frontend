@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Courses() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = React.useState<Course[]>([]);
   const [enrolled, SetEnrolled] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user ? user.id : null;
@@ -99,7 +99,7 @@ function Courses() {
 
   return (
     <div>
-      <Navbar page={"courses"} />
+      <Navbar />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 mb-6">
         {courses.map((course) => (
           <div

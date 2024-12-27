@@ -78,7 +78,7 @@ const AddCourse: React.FC = () => {
           <form className="mx-auto grid grid-cols-3 gap-4">
             <div className="mb-5">
               <label
-                for="course_name"
+                htmlFor="course_name"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Course Name
@@ -96,7 +96,7 @@ const AddCourse: React.FC = () => {
             </div>
             <div className="mb-5">
               <label
-                for="price"
+                htmlFor="price"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Course Price
@@ -114,7 +114,7 @@ const AddCourse: React.FC = () => {
             </div>
             <div className="mb-5">
               <label
-                for="instructor"
+                htmlFor="instructor"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Instructor
@@ -132,7 +132,7 @@ const AddCourse: React.FC = () => {
             </div>
             <div className="mb-5">
               <label
-                for="description"
+                htmlFor="description"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Description
@@ -150,7 +150,7 @@ const AddCourse: React.FC = () => {
             </div>
             <div className="mb-5">
               <label
-                for="p_link"
+                htmlFor="p_link"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Photo Link
@@ -168,7 +168,7 @@ const AddCourse: React.FC = () => {
             </div>
             <div className="mb-5">
               <label
-                for="y_link"
+                htmlFor="y_link"
                 className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white"
               >
                 Youtube Video Link
