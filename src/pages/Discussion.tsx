@@ -4,9 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Navbar";
 
 function Discussion() {
-  const taskRef = useRef("");
+  const taskRef = React.useRef<HTMLTextAreaElement>(null);
   const [message, setMessage] = useState([]);
-  const [name, setName] = useState(localStorage.getItem("name"));
   const [course, setCourse] = useState();
   const location = useLocation();
   const courseId = location.pathname.split("/")[2];
@@ -123,8 +122,8 @@ function Discussion() {
         {/* Chat Input Section */}
         <div className="p-4 border-t bg-gray-100 flex items-center">
           <textarea
-            cols="1"
-            rows="2"
+            cols={1}
+            rows={2}
             type="text"
             ref={taskRef}
             name="taskInput"

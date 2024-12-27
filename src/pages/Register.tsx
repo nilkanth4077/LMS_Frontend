@@ -69,7 +69,7 @@ export default function Register() {
             method="POST"
             className="space-y-6"
           >
-            <div class="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               <div>
                 <label
                   htmlFor="firstName"
