@@ -16,7 +16,7 @@ function Learnings() {
     async function fetchCourse() {
       try {
         const response = await axios.get(
-          `http://localhost:8080/user/learning/${userId}`,
+          `http://localhost:8081/user/learning/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

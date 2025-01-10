@@ -29,7 +29,7 @@ export default function AddTutor() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8080/admin/add_tutor", {
+      const response = await fetch("http://localhost:8081/admin/add_tutor", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

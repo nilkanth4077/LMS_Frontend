@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Courses() {
-  const [courses, setCourses] = React.useState<Course[]>([]);
+  const [courses, setCourses] = useState([]);
   const [enrolled, SetEnrolled] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user ? user.id : null;
@@ -19,7 +19,7 @@ function Courses() {
     const allCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/public/courses/all",
+          "http://localhost:8081/public/courses/all",
           {
             method: "GET",
           }
@@ -39,7 +39,7 @@ function Courses() {
     };
 
     if (userId) {
-      fetch(`http://localhost:8080/user/learning/${userId}`, {
+      fetch(`http://localhost:8081/user/learning/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,7 +69,7 @@ function Courses() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/user/course/enroll",
+        "http://localhost:8081/user/course/enroll",
         {
           courseId: courseId,
           userId: userId,

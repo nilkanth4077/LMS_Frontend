@@ -16,7 +16,7 @@ export default function Navbar() {
     if (token) {
       const fetchUserProfile = async () => {
         try {
-          const response = await fetch("http://localhost:8080/auth/profile", {
+          const response = await fetch("http://localhost:8081/auth/profile", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${token}`,
