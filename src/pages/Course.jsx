@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
-import Forum from "./forum";
 import ReactPlayer from "react-player";
 import { Progress } from "antd";
 import { Button, Modal } from "antd";
@@ -48,7 +47,7 @@ const Course = () => {
     async function fetchCourse() {
       try {
         const response = await axios.get(
-          `http://localhost:8080/user/course/${courseId}`,
+          `http://localhost:8081/user/course/${courseId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -69,7 +68,7 @@ const Course = () => {
   const handleDuration = () => {
     setDuration(playerRef.current.getDuration());
     if (duration !== 0) {
-      fetch("http://localhost:8080/user/progress/update-duration", {
+      fetch("http://localhost:8081/user/progress/update-duration", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -85,7 +84,7 @@ const Course = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8080/user/progress/${userId}/${courseId}`, {
+    fetch(`http://localhost:8081/user/progress/${userId}/${courseId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -104,7 +103,7 @@ const Course = () => {
       if (courseId && userId) {
         try {
           const response = await fetch(
-            "http://localhost:8080/user/progress/update-progress",
+            "http://localhost:8081/user/progress/update-progress",
             {
               method: "PUT",
               headers: {

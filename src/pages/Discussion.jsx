@@ -22,7 +22,7 @@ function Discussion() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:8080/user/discussion/${courseId}`, {
+    fetch(`http://localhost:8081/user/discussion/${courseId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -33,7 +33,7 @@ function Discussion() {
         console.log("Disc data: ", data);
       });
 
-    fetch(`http://localhost:8080/user/course/${courseId}`, {
+    fetch(`http://localhost:8081/user/course/${courseId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -47,7 +47,7 @@ function Discussion() {
       const newMessage = taskRef.current.value.trim();
       setFormData({ ...formData, content: newMessage });
 
-      fetch("http://localhost:8080/user/discussion/addMessage", {
+      fetch("http://localhost:8081/user/discussion/addMessage", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

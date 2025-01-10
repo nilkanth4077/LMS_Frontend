@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import AddCourse from "../../pages/Admin/AddCourse";
 import AddTutor from "../../pages/Admin/AddTutor";
 
-const AdminDashboard: React.FC = () => {
+export default function AdminDashboard() {
   return (
     <>
       <Navbar />
@@ -16,5 +16,3 @@ const AdminDashboard: React.FC = () => {
     </>
   );
 };
-
-export default AdminDashboard;

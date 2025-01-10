@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const AddCourse: React.FC = () => {
+function AddCourse() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     course_name: "",
@@ -31,7 +31,7 @@ const AddCourse: React.FC = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:8080/admin/course/add", {
+      const response = await fetch("http://localhost:8081/admin/course/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

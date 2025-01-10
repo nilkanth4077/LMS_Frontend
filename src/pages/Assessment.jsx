@@ -23,7 +23,7 @@ function Assessment() {
   const userId = user ? user.id : null;
 
   useEffect(() => {
-    fetch(`http://localhost:8080/user/questions/${courseId}`, {
+    fetch(`http://localhost:8081/user/questions/${courseId}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ function Assessment() {
 
   useEffect(() => {
     if (userId && courseId) {
-      fetch(`http://localhost:8080/user/assessment/get/${userId}/${courseId}`, {
+      fetch(`http://localhost:8081/user/assessment/get/${userId}/${courseId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ function Assessment() {
     };
     axios
       .post(
-        `http://localhost:8080/user/assessment/add/${userId}/${courseId}`,
+        `http://localhost:8081/user/assessment/add/${userId}/${courseId}`,
         data,
         {
           headers: {
