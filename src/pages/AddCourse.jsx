@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function AddCourse() {
   const navigate = useNavigate();
+  const currentUser = JSON.parse(localStorage.getItem("user"));
   const [formData, setFormData] = useState({
     course_name: "",
     price: "",
@@ -31,7 +32,19 @@ function AddCourse() {
         return;
       }
 
-      const response = await fetch("http://localhost:8081/admin/course/add", {
+      const url =
+        currentUser.role === "ADMIN"
+          ? "http://localhost:8081/admin/course/add"
+          : currentUser.role === "TUTOR"
+          ? "http://localhost:8081/tutor/course/add"
+          : null;
+
+      if (!url) {
+        toast.error("Unauthorized role!", { autoClose: 2000 });
+        return;
+      }
+
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +64,11 @@ function AddCourse() {
           p_link: "",
           y_link: "",
         });
-        setTimeout(() => navigate("/admin_dashboard"), 2000);
+        if (currentUser.role == "ADMIN") {
+          setTimeout(() => navigate("/admin_dashboard"), 2000);
+        } else if (currentUser.role == "TUTOR") {
+          setTimeout(() => navigate("/tutor_dashboard"), 2000);
+        }
       } else {
         const data = await response.json();
         toast.error(data.error || "Error occurred while adding the course");
@@ -196,6 +213,6 @@ function AddCourse() {
       </div>
     </>
   );
-};
+}
 
 export default AddCourse;
