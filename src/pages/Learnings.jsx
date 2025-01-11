@@ -57,7 +57,7 @@ function Learnings() {
   return (
     <>
       <Header page={"learnings"} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 mb-6 p-8">
         {courses.map((course) => (
           <div
             key={course.course_id}

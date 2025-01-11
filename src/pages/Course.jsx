@@ -147,7 +147,7 @@ const Course = () => {
   }
 
   return (
-    <div>
+    <div className="mt-20">
       <Header />
       <h3 className="text-center text-white py-4 text-lg italic font-bold bg-blue-900 mt-14">
         The Complete {course.course_name} Course - 2023

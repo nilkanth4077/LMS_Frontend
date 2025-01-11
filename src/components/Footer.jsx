@@ -1,7 +1,7 @@
 export default function Login() {
   return (
     <>
-      <div className=" bg-gray-900 m-0 p-0">
+      <div className=" bg-gray-900 w-full">
         <div className="max-w-2xl mx-auto text-white py-10">
           <div className="text-center">
             <h3 className="text-3xl mb-3">
