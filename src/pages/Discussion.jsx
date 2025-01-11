@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Navbar";
 
 function Discussion() {
-  const taskRef = React.useRef<HTMLTextAreaElement>(null);
+  const taskRef = useRef(null);
   const [message, setMessage] = useState([]);
   const [course, setCourse] = useState();
   const location = useLocation();
@@ -69,10 +69,10 @@ function Discussion() {
   return (
     <>
       <Header />
-      <h3 className="text-center text-white py-4 text-lg italic font-bold bg-blue-900 mt-14">
+      <h3 className="text-center text-white py-4 text-lg italic font-bold bg-blue-900 mt-20">
         Discussion Forum for '{course?.course_name}'
       </h3>
-      <div className="Forum mt-12 flex flex-col h-screen">
+      <div className="Forum flex flex-col border" style={{ height: "80vh" }}>
         {/* Chat Messages Section */}
         <div
           className="flex-1 overflow-y-auto p-4 bg-white border"
